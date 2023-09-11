@@ -1,32 +1,40 @@
 {% assign date_parts = article.published_at | split: " " %}
 {% assign formatted_date = date_parts[0] | date: "%B %d, %Y" %}
-
-<div class="bg-gray-100">
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto py-6 px-4">
-      <h1 class="text-2xl font-bold">{{ article.title }}</h1>
-      <p class="text-gray-600">
-        {% if section.settings.enable_author %}
-          By {{ article.author }}
-        {% endif %}
-        {% if section.settings.enable_published_time %}
-          on {{ formatted_date }}
-        {% endif %}
-      </p>
+{% for block in section.blocks %}
+  {% case block.type %}
+    <div class="bg-gray-100">
+      <header class="bg-white shadow-md">
+        <div class="container mx-auto py-6 px-4">
+          {% when 'article_title' %}
+          <h1 class="text-2xl font-bold">{{ article.title }}</h1>
+          <p class="text-gray-600">
+            {% when 'article_author' %}
+            {% if section.settings.enable_author %}
+              By {{ article.author }}
+            {% endif %}
+            {% when 'article_published_date' %}
+            {% if section.settings.enable_published_time %}
+              on {{ formatted_date }}
+            {% endif %}
+          </p>
+        </div>
+      </header>
+      {% when 'featured_image' %}
+      <figure class="mt-8">
+        <img
+          src="{{ article.image | img_url: 'large'}}"
+          alt="{{ article.image.alt }}"
+          class="rounded-md w-full">
+      </figure>
+      {% when 'article_content' %}
+      <section class="mt-6 text-gray-700 leading-relaxed">
+        <p>
+          {{ article.content }}
+        </p>
+      </section>
     </div>
-  </header>
-  <figure class="mt-8">
-    <img
-      src="{{ article.image | img_url: 'large'}}"
-      alt="{{ article.image.alt }}"
-      class="rounded-md w-full">
-  </figure>
-  <section class="mt-8 text-gray-700 leading-relaxed">
-    <p>
-      {{ article.content }}
-    </p>
-  </section>
-</div>
+  {% endcase %}
+{% endfor %}
 
 {% schema %}
   {
