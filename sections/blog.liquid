@@ -1,0 +1,5 @@
+<div id="articles">
+  {% for article in blog.articles limit: 3 %}
+    {% render 'article-template', article: article %}
+  {% endfor %}
+</div>

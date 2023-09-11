@@ -10,11 +10,22 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {{ 'application.js' | asset_url | script_tag }}
+    {{ 'header.css' | asset_url | stylesheet_tag }}
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+    <script defer="defer" src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script src="{{ 'application.js' | asset_url }}" defer="defer"></script>
+    {% if template.name contains 'blog' %}
+      <script src="{{ 'infinite-scroll-blog.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
   </head>
   <body>
+    {% section 'header' %}
     <main role="main">
       {{ content_for_layout }}
     </main>
+    {% section 'footer' %}
   </body>
 </html>

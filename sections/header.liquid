@@ -1,0 +1,150 @@
+{% assign first_link = section.settings.menu.links[0] %}
+<nav class="bg-white border-gray-200">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+    <a href="{{ first_link.url }}" class="flex items-center">
+      <img
+        src="{{ section.settings.header_image | img_url: 'master'}}"
+        class="h-10 mr-2"
+        alt="{{ shop.name }}" />
+    </a>
+    <button
+      data-collapse-toggle="navbar-dropdown"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      aria-controls="navbar-dropdown"
+      aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14">
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15" />
+      </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+        {% for link in section.settings.menu.links %}
+          {% if forloop.index <= 6 %}
+            {% if link.links == blank %}
+              <li>
+                <a
+                  href="{{ link.url }}"
+                  class="block py-2 pl-3 pr-4 {% if request.path == link.url %}text-red-700 md:text-red-700 {%  else %} text-black md:text-black {% endif %}  hover:text-red-700 bg-gray-100 rounded md:bg-transparent  md:hover:text-red-700  md:p-0"
+                  aria-current="page">{{ link.title }}</a>
+              </li>
+            {% else %}
+              <li>
+                <button
+                  id="dropdownNavbarLink{{forloop.index}}"
+                  data-dropdown-toggle="dropdownNavbar{{forloop.index}}"
+                  class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 md:w-auto">{{ link.title }}
+                  <svg
+                    class="w-2.5 h-2.5 ml-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6">
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4" />
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar{{forloop.index}}" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                    {% for sublink in link.links %}
+                      <li>
+                        <a href="{{ sublink.url }}" class="block px-4 py-2 hover:bg-gray-100">{{ sublink.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% assign last_index_minus_one = section.settings.menu.links.size | minus: 1 %}
+        {% assign last_index = section.settings.menu.links.size %}
+        {% for link in section.settings.menu.links %}
+          {% if forloop.index == last_index or forloop.index == last_index_minus_one %}
+            {% if link.title == "CART" %}
+              <li>
+                <button
+                  id="cartclick"
+                  type="button"
+                  class="relative inline-flex items-center p-1 text-sm font-medium text-center {% if request.path == link.url %} text-red-700 md:text-red-700 {% else %} text-black {% endif %} bg-white-700 rounded-lg hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 dark:bg-white-600 dark:hover:bg-white-700 dark:focus:ring-white-800 hover:text-red-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+
+                  <span class="sr-only">{{ link.title }}</span>
+                  <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-200 border-2 border-white rounded-full top-3 -right-5 dark:border-gray-900">0</div>
+                </button>
+              </li>
+            {% else %}
+              {% if shop.customer_accounts_enabled %}
+                <li>
+                  <button
+                    id="loginclick"
+                    type="button"
+                    class="relative inline-flex items-center p-1 text-sm font-medium text-center {% if request.path == link.url %} text-red-700 md:text-red-700 {% else %} text-black {% endif %} bg-white-700 rounded-lg hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 dark:bg-white-600 dark:hover:bg-white-700 dark:focus:ring-white-800 hover:text-red-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+                  </button>
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Header Image",
+        "info": "Upload an image for the header."
+      }, {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Header Menu",
+        "default": "main-menu"
+      }
+    ]
+  }
+{% endschema %}

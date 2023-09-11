@@ -1,0 +1,51 @@
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+.bgimage1 {
+  height: 80vh;
+  background-image: url("https://cdn.shopify.com/s/files/1/0818/9686/6071/files/fram_2_with_Backround_Work.webp");
+  background-position: 0px 0px;
+  background-size: cover;
+}
+.bgimage2 {
+  height: 80vh;
+}
+.textinshadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.carousel-container {
+  overflow: hidden;
+  height: 100%;
+}
+.carousel-slides {
+  display: flex;
+  transition: all 0.5s;
+}
+.homepage2img1{
+  background-image: url("https://cdn.shopify.com/s/files/1/0818/9686/6071/files/fram_4_with_Backround_Work.webp");
+  background-size: cover;
+}
+.homepage2img2{
+  background-image: url("https://cdn.shopify.com/s/files/1/0818/9686/6071/files/fram_5_with_Backround_Work.webp");
+  background-size: cover;
+}
+.homepage2img3{
+  background-image: url("https://cdn.shopify.com/s/files/1/0818/9686/6071/files/fram_2_with_Backround_Work.webp");
+  background-size: cover;
+}
+.shop-text {
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 10%; 
+  right: 0%;  
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+}
