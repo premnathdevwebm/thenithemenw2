@@ -1,0 +1,9 @@
+{
+  "name": "Template 404",
+  "sections": {
+    "custom_theme404": {
+      "type": "404custom"
+    }
+  },
+  "order": ["custom_theme404"]
+}
