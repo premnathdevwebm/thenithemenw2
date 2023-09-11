@@ -1,6 +1,30 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "header_image": "shopify:\/\/shop_images\/Theni_Anantham_English_Logo.png",
+          "menu": "main-menu"
+        }
+      },
+      "homepage": {
+        "type": "homepage",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
