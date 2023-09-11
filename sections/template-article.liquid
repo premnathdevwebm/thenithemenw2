@@ -1,0 +1,74 @@
+{% assign date_parts = article.published_at | split: " " %}
+{% assign formatted_date = date_parts[0] | date: "%B %d, %Y" %}
+
+<div class="bg-gray-100">
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto py-6 px-4">
+      <h1 class="text-2xl font-bold">{{ article.title }}</h1>
+      <p class="text-gray-600">
+        {% if section.settings.enable_author %}
+          By {{ article.author }}
+        {% endif %}
+        {% if section.settings.enable_published_time %}
+          on {{ formatted_date }}
+        {% endif %}
+      </p>
+    </div>
+  </header>
+  <figure class="mt-8">
+    <img
+      src="{{ article.image | img_url: 'large'}}"
+      alt="{{ article.image.alt }}"
+      class="rounded-md w-full">
+  </figure>
+  <section class="mt-8 text-gray-700 leading-relaxed">
+    <p>
+      {{ article.content }}
+    </p>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Template Article",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_author",
+        "default": true,
+        "label": "Display Author Name"
+      }, {
+        "type": "checkbox",
+        "id": "enable_published_time",
+        "default": true,
+        "label": "Display Published Time"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "article_title",
+        "name": "Title",
+        "limit": 1
+      },
+      {
+        "type": "article_author",
+        "name": "Author",
+        "limit": 1
+      },
+      {
+        "type": "article_published_date",
+        "name": "Published Date",
+        "limit": 1
+      },
+      {
+        "type": "featured_image",
+        "name": "Thumbnail",
+        "limit": 1
+      }, {
+        "type": "article_content",
+        "name": "Content",
+        "limit": 1
+      }
+    ]
+  }
+{% endschema %}
