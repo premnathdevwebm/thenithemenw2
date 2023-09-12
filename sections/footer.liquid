@@ -5,32 +5,25 @@
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">GET IN TOUCH</h2>
         <ul class="text-gray-500 dark:text-gray-400 font-medium">
           <li class="mb-4">
-            <a href="#" class=" hover:underline">11, Main Road, Varadharaj Shopping Complex, Dindigul - 624001</a>
+            <span>11, Main Road, Varadharaj Shopping Complex, Dindigul - 624001</span>
           </li>
           <li class="mb-4">
-            <a href="#" class="hover:underline">support@theniananthamsilks.com</a>
+            <span>support@theniananthamsilks.com</span>
           </li>
           <li class="mb-4">
-            <a href="#" class="hover:underline">0451-2888 288</a>
+            <span>0451-2888 288</span>
           </li>
         </ul>
       </div>
       <div>
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">QUICK LINKS</h2>
-        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-          <li class="mb-4">
-            <a href="#" class="hover:underline">About us</a>
-          </li>
-          <li class="mb-4">
-            <a href="#" class="hover:underline">Blog</a>
-          </li>
-          <li class="mb-4">
-            <a href="#" class="hover:underline">Embossed Silk</a>
-          </li>
-          <li class="mb-4">
-            <a href="#" class="hover:underline">Pochampalli Silk</a>
-          </li>
-        </ul>
+        {% for link in section.settings.menu.links limit: 4 %}
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="{{ link.url }}" class="hover:underline">{{ link.title }}</a>
+            </li>
+          </ul>
+        {% endfor %}
       </div>
       <div>
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
@@ -108,7 +101,6 @@
     </div>
   </div>
 </footer>
-
 {% schema %}
   {
     "name": "Footer",
@@ -117,7 +109,7 @@
         "type": "link_list",
         "id": "menu",
         "label": "Footer Menu",
-        "default": "footer-menu"
+        "default": "main-menu"
       }
     ]
   }
