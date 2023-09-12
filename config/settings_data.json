@@ -16,6 +16,7 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "menu": "footer-menu"
         }
       }
     },
