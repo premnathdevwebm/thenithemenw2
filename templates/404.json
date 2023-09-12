@@ -1,9 +1,8 @@
 {
-  "name": "Template 404",
   "sections": {
-    "custom_theme404": {
-      "type": "404custom"
-    }
+      "template": {
+          "type": "template-404"
+      }
   },
-  "order": ["custom_theme404"]
+  "order": ["template"]
 }
