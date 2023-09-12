@@ -1,0 +1,8 @@
+{
+    "sections": {
+        "pagetemp":{
+            "type": "template-page"
+        }
+    },
+    "order": ["pagetemp"]
+}
