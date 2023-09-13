@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".carousel-slides img");
   if (slides.length) {
     const totalSlides = slides.length;
-    const slideWidth = slides[0].clientWidth;
+    let slideWidth = slides[0].clientWidth;
+
+    window.addEventListener("resize", () => {
+      slideWidth = slides[0].clientWidth;
+    });
 
     setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;

@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 body, html {
   overflow-x: hidden;
   width: 100%;
+}
+.headerlogo{
+  font-family: 'Roboto', sans-serif;
 }
 .bgimage1 {
   height: 80vh;

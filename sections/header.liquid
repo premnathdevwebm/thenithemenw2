@@ -1,10 +1,10 @@
 {% assign first_link = section.settings.menu.links[0] %}
 <nav class="bg-white border-gray-200">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 headerlogo">
     <a href="{{ first_link.url }}" class="flex items-center">
       <img
         src="{{ section.settings.header_image | img_url: 'master'}}"
-        class="h-10 mr-2"
+        class="h-20 mr-2"
         alt="{{ shop.name }}" />
     </a>
     <button
