@@ -3,6 +3,9 @@ body, html {
   overflow-x: hidden;
   width: 100%;
 }
+main{
+  background-color: #D3D3D3;
+}
 .headerlogo{
   font-family: 'Roboto', sans-serif;
 }
