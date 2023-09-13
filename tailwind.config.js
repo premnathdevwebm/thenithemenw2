@@ -7,7 +7,17 @@ module.exports = {
     "./templates/**/*.liquid",
   ],
   theme: {
-    extend: {},
+    extend: {
+      textShadow: {
+        'default': '2px 2px 4px rgba(0, 0, 0, 0.10)',
+        'md': '4px 4px 6px rgba(0, 0, 0, 0.10)',
+        'lg': '6px 6px 8px rgba(0, 0, 0, 0.10)',
+        'none': 'none'
+      },
+      width: {
+        '125': '125px'
+      }
+    },
   },
   plugins: [],
 }
