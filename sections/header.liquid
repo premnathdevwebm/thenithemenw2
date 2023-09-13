@@ -37,7 +37,7 @@
                 <li>
                   <a
                     href="{{ link.url }}"
-                    class="block py-2 pl-3 pr-4 {% if request.path == link.url %}text-red-700 md:text-red-700 {%  else %} text-black md:text-black {% endif %}  hover:text-red-700 bg-gray-100 rounded md:bg-transparent  md:hover:text-red-700  md:p-0"
+                    class="block py-2 pl-3 pr-4 {% if request.path == link.url %}text-red-700 md:text-red-700 {%  else %} text-black md:text-black {% endif %}  hover:text-red-700 bg-gray-100 rounded md:bg-transparent  md:hover:text-red-700  md:p-0 nav-item"
                     aria-current="page">{{ link.title }}</a>
                 </li>
               {% else %}
@@ -45,7 +45,7 @@
                   <button
                     id="dropdownNavbarLink{{forloop.index}}"
                     data-dropdown-toggle="dropdownNavbar{{forloop.index}}"
-                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 md:w-auto">{{ link.title }}
+                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 md:w-auto nav-item">{{ link.title }}
                     <svg
                       class="w-2.5 h-2.5 ml-2.5"
                       aria-hidden="true"
@@ -83,7 +83,7 @@
                   <button
                     id="cartclick"
                     type="button"
-                    class="relative inline-flex items-center p-1 text-sm font-medium text-center {% if request.path == link.url %} text-red-700 md:text-red-700 {% else %} text-black {% endif %} bg-white-700 rounded-lg hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 dark:bg-white-600 dark:hover:bg-white-700 dark:focus:ring-white-800 hover:text-red-700">
+                    class="relative inline-flex items-center p-1 text-sm font-medium text-center {% if request.path == link.url %} text-red-700 md:text-red-700 {% else %} text-black {% endif %} bg-white-700 rounded-lg hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 dark:bg-white-600 dark:hover:bg-white-700 dark:focus:ring-white-800 hover:text-red-700 nav-item">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -96,7 +96,6 @@
                         stroke-linejoin="round"
                         d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                     </svg>
-
                     <span class="sr-only">{{ link.title }}</span>
                     <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-200 border-2 border-white rounded-full top-3 -right-5 dark:border-gray-900">0</div>
                   </button>
@@ -107,7 +106,7 @@
                     <button
                       id="loginclick"
                       type="button"
-                      class="relative inline-flex items-center p-1 text-sm font-medium text-center {% if request.path == link.url %} text-red-700 md:text-red-700 {% else %} text-black {% endif %} bg-white-700 rounded-lg hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 dark:bg-white-600 dark:hover:bg-white-700 dark:focus:ring-white-800 hover:text-red-700">
+                      class="relative inline-flex items-center p-1 text-sm font-medium text-center {% if request.path == link.url %} text-red-700 md:text-red-700 {% else %} text-black {% endif %} bg-white-700 rounded-lg hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 dark:bg-white-600 dark:hover:bg-white-700 dark:focus:ring-white-800 hover:text-red-700 nav-item">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -120,7 +119,6 @@
                           stroke-linejoin="round"
                           d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-
                     </button>
                   </li>
                 {% endif %}

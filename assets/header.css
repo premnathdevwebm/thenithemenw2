@@ -6,6 +6,13 @@ body, html {
 .headerlogo{
   font-family: 'Roboto', sans-serif;
 }
+.nav-item {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  vertical-align: middle;
+}
 .bgimage1 {
   height: 80vh;
   background-image: url("https://cdn.shopify.com/s/files/1/0818/9686/6071/files/fram_2_with_Backround_Work.webp");
