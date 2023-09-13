@@ -33,6 +33,9 @@ body, html {
   display: flex;
   transition: all 0.5s;
 }
+.carousel-slides img {
+  transition: transform 0.3s ease-in-out;
+}
 .homepage2img1{
   background-image: url("https://cdn.shopify.com/s/files/1/0818/9686/6071/files/fram_4_with_Backround_Work.webp");
   background-size: cover;
