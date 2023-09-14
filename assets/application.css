@@ -620,8 +620,8 @@ video {
   left: 50%;
 }
 
-.left-3 {
-  left: 0.75rem;
+.left-8 {
+  left: 2rem;
 }
 
 .top-1\/2 {
@@ -897,8 +897,8 @@ video {
   width: 125px;
 }
 
-.w-135 {
-  width: 135px;
+.w-175 {
+  width: 175px;
 }
 
 .w-2 {
@@ -1307,6 +1307,11 @@ video {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover {
@@ -2015,12 +2020,12 @@ video {
     padding-bottom: 2rem;
   }
 
-  .md\:pl-4 {
-    padding-left: 1rem;
+  .md\:pl-16 {
+    padding-left: 4rem;
   }
 
-  .md\:pl-6 {
-    padding-left: 1.5rem;
+  .md\:pl-4 {
+    padding-left: 1rem;
   }
 
   .md\:pr-4 {
