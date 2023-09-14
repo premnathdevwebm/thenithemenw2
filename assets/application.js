@@ -30,4 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   loginButton.addEventListener("click", function () {
     window.location.href = "/account/login";
   });
+  // readblog
+  const readBlogButto = document.getElementById("readblog")
+  readBlogButto.addEventListener("click", function () {
+    window.location.href = "/blogs/news";
+  });
 });
