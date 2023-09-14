@@ -7,6 +7,31 @@
     <meta name="description" content="{{ page_description | escape }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="{{ settings.color_primary }}">
+    <meta name="format-detection" content="telephone=no">
+    <link
+      rel="prefetch"
+      as="document"
+      href="https://{{shop.domain}}">
+    <link
+      rel="dns-prefetch"
+      href="https://cdn.shopify.com"
+      crossorigin>
+    <link
+      rel="preconnect"
+      href="https://cdn.shopify.com"
+      crossorigin>
+    <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+    {%- if settings.favicon != blank %}<link
+        rel="shortcut icon"
+        type="image/png"
+        href="{{ settings.favicon | img_url: '32x' }}">{% endif -%}
+    {%- if settings.favicon_apple != blank %}<link
+        rel="apple-touch-icon-precomposed"
+        type="image/png"
+        sizes="152x152"
+        href="{{ settings.favicon_apple | img_url: '152x' }}">{% endif -%}
+
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
