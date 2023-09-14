@@ -31,12 +31,12 @@
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
         {% for i in (start_position..total_links) %}
           {% assign link = section.settings.menu.links[i] %}
-        <ul class="text-gray-500 dark:text-gray-400 font-medium">
-          <li class="mb-4">
-            <a href="{{ link.url }}" class="hover:underline">{{ link.title }}</a>
-          </li>
-        </ul>
-      {% endfor %}
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="{{ link.url }}" class="hover:underline">{{ link.title }}</a>
+            </li>
+          </ul>
+        {% endfor %}
       </div>
       <div>
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">NEWSLETTER SIGNUP</h2>
@@ -45,7 +45,7 @@
             <span>Join the Theni Anantham family and get updates on our newest collections and seasonal discounts!</span>
           </li>
           <li class="mb-4">
-            <span class="flex items-center border rounded-md shadow-sm overflow-hidden">
+            <div class="flex items-center border rounded-md shadow-sm">
               <input
                 type="email"
                 class="flex-grow py-2 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent rounded-l-md"
@@ -53,7 +53,7 @@
               <button class="py-2 px-4 bg-red-600 text-white rounded-r-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
                 Subscribe
               </button>
-            </span>
+            </div>
           </li>
         </ul>
       </div>
