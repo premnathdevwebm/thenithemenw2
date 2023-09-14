@@ -15,7 +15,8 @@ module.exports = {
         'none': 'none'
       },
       width: {
-        '125': '125px'
+        '125': '125px',
+        '135': '135px',
       }
     },
   },
