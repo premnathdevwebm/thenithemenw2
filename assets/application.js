@@ -36,3 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "/blogs/news";
   });
 });
+
+function gotonewCollection(){
+  window.location.href = "/collections/new-collection"
+}
+function gotobestSellers(){
+  window.location.href = "/collections/new-collection"
+}
+function gotoourfestive(){
+  window.location.href = "/collections/shop-our-festivals"
+}
