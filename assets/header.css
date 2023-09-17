@@ -26,6 +26,24 @@ main{
 .bgimage2 {
   height: 80vh;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header-content {
+  flex-shrink: 0;
+}
+
+.text-content {
+  width: 80%;
+  margin: auto;
+  background: white;
+  overflow: auto;
+  padding: 16px;
+}
 .textinshadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
@@ -71,3 +89,4 @@ main{
 .md\:object-position-25-75 {
   object-position: 25% 75%;
 }
+
